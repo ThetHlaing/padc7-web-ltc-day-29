@@ -7,7 +7,7 @@ const memberDirectory = {
 
 //Only alllowed the name starting with alphabetic numbers and space between
 function isValidName(name) {
-  return (/^\w+ \w+$/).test(name);
+  return (/^\[a-zA-Z]+ \[a-zA-Z]+$/).test(name);
 }
 
 function isValidPhone(phone) {

@@ -24,6 +24,12 @@ class DepartmentController {
             });
     }
 
+    create(req, res) {
+        model.createDepartment(req.body.name)
+            .then(data => { res.send("department created") })
+            .catch(err => { res.status(400).send("Unexcepted error") })
+    }
+
 }
 
 

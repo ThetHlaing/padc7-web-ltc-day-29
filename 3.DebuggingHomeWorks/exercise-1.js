@@ -14,7 +14,8 @@ function completeTasks(n = 1) {
 
   while (todos.length > 0 && tasksComplete < n) {
     console.log(todos[0] + ' complete!');
-    delete todos[0];
+    //delete todos[0];
+    todos.shift();
     tasksComplete++;
   }
 
