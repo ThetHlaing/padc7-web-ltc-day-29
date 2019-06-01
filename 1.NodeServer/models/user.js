@@ -10,6 +10,7 @@ class User extends BaseModel {
         //     && password == "123456") {
         //     return { userId: 1, name: "padc" }
         // }
+       
         return new Promise((resolve, reject) => {
             this.sql.query(
                 'select * from users where name = ? ',
@@ -35,7 +36,7 @@ class User extends BaseModel {
     }
 
     async register(name, email, password) {
-
+        console.log(name,password,'data');
         return new Promise((resolve, reject) => {
             //hash the password
             bcrypt.hash(password, 10, (err, hashedPassword) => {

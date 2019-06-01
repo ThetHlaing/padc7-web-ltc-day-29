@@ -10,7 +10,7 @@ route.post('/signin', (req, res) => {
         .then(currentUser => {
             if (currentUser) {
                 const token = jwt.sign({ data: currentUser }, key)
-                res.status(200).send(token);
+                res.status(200).send({token});
             }
             else {
                 res.status(403).send("Access Denied");
@@ -24,6 +24,7 @@ route.post('/signin', (req, res) => {
 
 route.post('/register', (req, res) => {
     const user = new UserModel();
+    console.log(req.body,'Body');
     user.register(req.body.name, req.body.email, req.body.password)
         .then(user => {
             res.send(user)

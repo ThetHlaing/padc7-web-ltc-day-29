@@ -7,11 +7,14 @@ import {
   Link
 } from 'react-router-dom';
 import RegisterForm from './components/register';
+import SignInForm from './components/signin';
 
 function App() {
   return (
     <Router>
         <Route path="/register" component={RegisterForm}/>        
+
+        <Route path="/signin" component={SignInForm}/>        
     </Router>
   );
 }

@@ -11,16 +11,36 @@ class RegisterForm extends React.Component {
 
     handleOnSubmit = (event) => {
         event.preventDefault();
-        request.post('http://localhost:8089/api/auth/register',
-            {
-                name: this.name.current.value,
-                email: this.email.current.value,
-                password: this.password.current.value
+        // request.post('http://localhost:8088/api/auth/register',
+        //     {
+        //         form: {
+        //             name: this.name.current.value,
+        //             email: this.email.current.value,
+        //             password: this.password.current.value
+        //         }
+        //     },
+        //     (err, data) => {
+        //         console.log(err, data);
+        //     });
+
+        const formData = new URLSearchParams();
+        formData.append("name", this.name.current.value);
+        formData.append("email", this.email.current.value);
+        formData.append("password", this.password.current.value);
+
+        fetch('http://localhost:8088/api/auth/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Accept': 'application/json'
             },
-            (err, data) => {
-                console.log(err, data);
-            });
-            
+            mode: 'no-cors',
+            body: formData,
+        })
+            .then(res => res.json())
+            .then(data => { console.log(data) })
+            .catch(err => { console.log(err) });
+
     }
 
     render() {
