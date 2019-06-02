@@ -1,4 +1,4 @@
-export const retrieveToken = (name, password) => (dispatch) => {
+export const retrieveToken = (name, password,cb) => (dispatch) => {
     const formData = new URLSearchParams();
     formData.append("name", name);
     formData.append("password", password);
@@ -21,6 +21,9 @@ export const retrieveToken = (name, password) => (dispatch) => {
                 type: 'ADD_TOKEN',
                 token: data.token
             })
+            cb();
         })
         .catch(err => { console.log(err) });
 }
+
+

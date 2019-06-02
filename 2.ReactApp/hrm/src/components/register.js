@@ -46,11 +46,11 @@ class RegisterForm extends React.Component {
     render() {
         return (
             <form onSubmit={this.handleOnSubmit}>
-                <lable>Name </lable>
+                <label>Name </label>
                 <input type="text" name="name" ref={this.name}></input><br />
-                <lable>Email </lable>
+                <label>Email </label>
                 <input type="email" name="email" ref={this.email}></input><br />
-                <lable>Password </lable>
+                <label>Password </label>
                 <input type="password" name="password" ref={this.password}></input><br />
                 <button type="submit">Register</button>
             </form>
