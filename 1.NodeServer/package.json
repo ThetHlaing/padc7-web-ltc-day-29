@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/ThetHlaing/padc7-web-ltc-day-25#readme",
   "dependencies": {
-    "@hapi/joi": "^15.0.2",
+    "@hapi/joi": "^15.1.1",
     "body-parser": "^1.19.0",
     "dotenv": "^8.0.0",
     "ejs": "^2.6.1",
